@@ -49,8 +49,8 @@ df <- df[,c(grep("-(mean|std)\\(\\)", Feat[,2]),tail(1:ncol(df),2))]
 # Step 3 ------------------------------------------------------------------
 # Uses descriptive activity names to name the activities in the data set
 
-temp <- read.table("activity_labels.txt", stringsAsFactors = FALSE)
-df[,ncol(df)] <- temp[df[,ncol(df)], 2]
+Acts <- read.table("activity_labels.txt", stringsAsFactors = FALSE)
+df[,ncol(df)] <- Acts[df[,ncol(df)], 2]
 
 # Step 4 ------------------------------------------------------------------
 # Appropriately labels the data set with descriptive variable names. 
