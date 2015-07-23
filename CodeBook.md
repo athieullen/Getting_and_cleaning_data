@@ -1,5 +1,5 @@
 # R code
-=================
+===========
 
 The script `run_analysis.R` performs the 5 steps described in the course project's definition.
 
@@ -16,7 +16,7 @@ The script `run_analysis.R` performs the 5 steps described in the course project
 * Step 5: generate the tidy dataset with all the average measures for each subject and activity type. The output file is called `tidy_data_set.txt` and contains 180 rows (30 subjects * 6 activities) and all the 68 variables.
 
 # R objects
-=================
+===========
 
 * `trainX`, `trainY`, `trainSub` contain the training data from the downloaded files.
 * `testX`, `testY`, and `testSub` contain the test data from the downloaded files.
@@ -26,7 +26,7 @@ The script `run_analysis.R` performs the 5 steps described in the course project
 * `dfAv` contains the averages of sensor variables stored in `df`, which will be later stored in the `tidy_data_set.txt` file. `ddply()` from the plyr package is used to apply `colMeans()`.
 
 # Original variables
-=================
+===========
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -37,34 +37,33 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+*tBodyAcc-XYZ
+*tGravityAcc-XYZ
+*tBodyAccJerk-XYZ
+*tBodyGyro-XYZ
+*tBodyGyroJerk-XYZ
+*tBodyAccMag
+*tGravityAccMag
+*tBodyAccJerkMag
+*tBodyGyroMag
+*tBodyGyroJerkMag
+*fBodyAcc-XYZ
+*fBodyAccJerk-XYZ
+*fBodyGyro-XYZ
+*fBodyAccMag
+*fBodyAccJerkMag
+*fBodyGyroMag
+*fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals and kept in the data frame `df` are: 
+*mean(): Mean value
+*std(): Standard deviation
 
-mean(): Mean value
-std(): Standard deviation
-
+The other variables are:
 * `Subject` represents the ID of the subject who performed the activity for each window sample, expressed as an integer value from 1 to 30.
-
 * `Activity` is the ID, expressed as a character string", of the activity performed by each subject and associated with each measurement. 6 different activities are present here.
 
 # Output variables
-=================
+===========
 
 Variables stored in the data frame `dfAv` and in `tidy_data_set.txt` output consists in the previous original features, averaged by Subject and Activity values.
