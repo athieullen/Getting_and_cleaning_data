@@ -3,7 +3,7 @@
 
 The script `run_analysis.R` performs the 5 steps described in the course project's definition.
 
-* Step 0: a test is performed on working directory. If folder `UCI HAR Dataset` already exists, set it as workind directory. Otherwise download data and extract .zip file into working directory.
+* Step 0: a test is performed on working directory. If folder `UCI HAR Dataset` already exists, set it as working directory. Otherwise download data and extract .zip file into working directory.
 
 * Step 1: sensor variables, labels, and subjects data are respectively load into R and merged for training and test sets using `rbind()` function. These data sets are then merged into a single global data set using `cbind()` function. Useless objects (single data files) are then removed to save memory.
 
